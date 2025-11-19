@@ -20,9 +20,9 @@ public class HealthCheckIT {
 		ChromeOptions options = new ChromeOptions();
 		// WebDriver driver = new RemoteWebDriver(new URL("http://10.85.11.29:4444/wd/hub"), options);
 		// driver.navigate().to("http://10.85.11.29:8001/tasks");
-		WebDriver driver = new RemoteWebDriver(new URL("http://172.31.240.1:4444/wd/hub"), options);
+		WebDriver driver = new RemoteWebDriver(new URL("http://seuip:4444/wd/hub"), options);
         try{
-            driver.navigate().to("http://172.31.240.1:9999/tasks");
+            driver.navigate().to("http://seuip:9999/tasks");
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
             String version = driver.findElement(By.id("version")).getText();
             Assert.assertTrue(version.startsWith("build"));
