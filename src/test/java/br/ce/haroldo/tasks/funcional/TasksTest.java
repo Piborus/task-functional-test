@@ -17,8 +17,8 @@ public class TasksTest {
 		System.setProperty("webdriver.chrome.driver", "src/test/resource/chromedriver-win64/chromedriver.exe");
 		//WebDriver driver = new ChromeDriver();
 		ChromeOptions options = new ChromeOptions();
-		// WebDriver driver = new RemoteWebDriver(new URL("http://10.85.11.29:4444/wd/hub"), options);
-		// driver.navigate().to("http://10.85.11.29:8001/tasks");
+		// WebDriver driver = new RemoteWebDriver(new URL("http://:4444/wd/hub"), options);
+		// driver.navigate().to("http://:8001/tasks");
 		WebDriver driver = new RemoteWebDriver(new URL("http://172.31.240.1:4444/wd/hub"), options);
 		driver.navigate().to("http://172.31.240.1:8001/tasks");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -100,7 +100,7 @@ public class TasksTest {
 		Assert.assertEquals("Sucess!", message);
 		driver.findElement(By.xpath("//a[@class='btn btn-outline-danger btn-sm']")).click();
 		message = driver.findElement(By.id("message")).getText();
-		Assert.assertEquals("Sucess!", message);
+		Assert.assertEquals("Success!", message);
 		} finally {
 			driver.quit();
 		}	
